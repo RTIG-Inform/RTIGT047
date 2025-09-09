@@ -1,8 +1,8 @@
 ![](images/rtig_document_header_logo.png)
 
-# CMS to PID Interface Protocol
+# RTIG T047 CMS to PID Interface Protocol
 
-# Part 1 - Architecture
+# Background and Introduction to the Standard
 
 
 ## Status of this document

@@ -1045,7 +1045,8 @@ CMS/journeyMessage/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{dev
 		"deviceId": "ABCD1234567890",
 		"deviceModel": "ABC DISPLAY", // optional string with model
 		"requestId": "1ca491a6-3355-462e-81b5-cac9bbf4941c",
-		"tenantId": "UUID" // optional identify customer tenant
+		"tenantId": "UUID", // optional identify customer tenant
+		"rtigVersion": "2" // optional identify rtig version that display supports "1" or "2"
 	}
 }
 ```

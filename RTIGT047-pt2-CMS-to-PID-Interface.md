@@ -1149,7 +1149,7 @@ mqttClientCertificate: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA2RwFFVfEcv1b
 
 ```json
 CMS/scheduledDeparture/request
-CMS/realtimeDeparture/request
+CMS/realTimeDeparture/request
 CMS/informationMessage/request
 CMS/journeyMessage/request
 ```
@@ -1186,7 +1186,7 @@ CMS/journeyMessage/request
 
 ```json
 {
-	"realtimeDepartureRequest": {
+	"realTimeDepartureRequest": {
 		"vendorId": "VENDOR0001",
 		"deviceId": "ABCD1234567890",
 		"requestId": "ad3ccebe-0611-4d4c-8ab3-7e1e6882b08b",
@@ -1270,7 +1270,7 @@ CMS/journeyMessage/request
 
 ```json
 CMS/scheduledDeparture/response/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{device_id}
-CMS/realtimeDeparture/response/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{device_id}
+CMS/realTimeDeparture/response/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{device_id}
 CMS/informationMessage/response/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{device_id}
 CMS/journeyMessage/response/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{device_id}
 ```
@@ -1279,7 +1279,7 @@ CMS/journeyMessage/response/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{de
 
 ```json
 {
-	"realtimeDepartureResponse": {
+	"realTimeDepartureResponse": {
 		"requestId": "ad3ccebe-0611-4d4c-8ab3-7e1e6882b08b",
 		"status": "DONE",
 		"timestamp": "2022-01-12T10:32:14-00:00"

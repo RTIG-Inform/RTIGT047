@@ -413,14 +413,14 @@ N.B. The arrays of localities, clusters and stops within the locationConfig are 
 
 ```json
 [
-	Air,
-	Bus,
-	Coach,
-	Ferry,
-	Metro,
-	Rail,
-	Tram,
-	underground
+	AIR,
+	BUS,
+	COACH,
+	FERRY,
+	METRO,
+	RAIL,
+	TRAM,
+	UNDERGROUND
 ]
 ```
 

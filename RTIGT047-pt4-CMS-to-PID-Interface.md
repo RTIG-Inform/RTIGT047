@@ -4,7 +4,6 @@
 
 ## Part 4 - Additional Services
 
-
 ## Status of this document
 
 This document is Draft.
@@ -50,6 +49,7 @@ If there are any comments or feedback arising from the review or use of this doc
 * Two use cases - request from CMS/maintenance system to display whjich responds with full response with all elements that the display is capable of providing.
 
 * An enhanced Status Response is therefore provided here. All are optional elements, where used it is important to ensure that naming and keys remain consistent.
+
 ```json
 {
 	"statusResponse": {
@@ -100,6 +100,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	}
 }
 ```
+
 ## Sensor Events
 
 * Sensor events are driven by the display and pushed to the MQTT broker periodically or upon change. The trigger for a sensor event could be set by the display configuration, for example triggering a sensor event when a battery falls to less than 25% of capacity, or when inside temperature of the display is over 40ºC.
@@ -111,10 +112,13 @@ If there are any comments or feedback arising from the review or use of this doc
 * This topic is optional and is mainly for development purposes, it might be disabled in production.
 
 * Display will subscribe to the MQTT topic
+
 ```json
 {device_type}/deviceTerminal/request/{vendor_id}/{device_id}
 ```
+
 * The CMS will send a request of the form
+
 ```json
 {
 	"deviceTerminalRequest": {
@@ -126,6 +130,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	}
 }
 ```
+
 * senderId - string - optional is a unique identifier of a command request, to identify which entity on the CMS requested this command execution. For example if multiple users are executing commands on the same device, the CMS can display command responses to the specific user which requested command execution.
 
 * commandSequence - Integer - optional Command sequence identifies specific command, which can be then used in command responses to group multiple responses for the same command. For example if a user executes a command which takes time to complete, device can return multiple responses with progress status for this command.
@@ -135,10 +140,13 @@ If there are any comments or feedback arising from the review or use of this doc
 * timestamp - String - ISO8601 formatted date and time to indicate when the command was requested.
 
 * When the shell command is completed, display should respond by posting the response to
+
 ```json
 {device_type}/deviceTerminal/response
 ```
+
 * The response takes the form:
+
 ```json
 {
 	"deviceTerminalResponse": {
@@ -152,6 +160,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	}
 }
 ```
+
 * senderId - String - optional Copy of senderId received in terminal request.
 
 * commandSequence - Integer - optional Copy of commandSequence received in terminal request.
@@ -167,10 +176,13 @@ If there are any comments or feedback arising from the review or use of this doc
 ## Display reset
 
 * Display will subscribe to the vendor specific MQTT topic
+
 ```json
 {device_type}/reset/request/{vendor_id}/{device_id}
 ```
+
 * The CMS will send a request of the form
+
 ```json
 {
 	"resetRequest": {
@@ -182,7 +194,9 @@ If there are any comments or feedback arising from the review or use of this doc
 	}
 }
 ```
+
 * ResetType shall be one of:
+
 ```json
 [
 	DATA,
@@ -190,6 +204,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	FULL
 ]
 ```
+
 * If resetType = DATA the display will clear any currently stored schedules, RTI prediction data and messages. This may be necessary if the display gets out of sync with the published data and needs a clean set of data publishing to it.
 
 * If resetType = RESTART The display will simply reboot its OS and start again. No new discovery process should take place. The reset response message will contain the result "RESTARTING" and will be sent just prior to the reboot to confirm that the command was received. Once the display has rebooted it should send another resetResponse with the same requestId with the result set to DONE.
@@ -199,10 +214,13 @@ If there are any comments or feedback arising from the review or use of this doc
 * If resetType = FULL The display will clear down all configuration and return to initial provisioning state, causing it to send a discoveryRequest message again. The reset response message will be sent prior to the discoveryRequest but does not need actioning other than logging.
 
 * When a reset is completed, the display should respond by publishing a response to
+
 ```json
 {device_type}/reset/response
 ```
+
 * The response takes the form:
+
 ```json
 {
 	"resetResponse": {
@@ -215,6 +233,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	}
 }
 ```
+
 * If there is an issue executing the reset then the result should be set to "ERROR" with optional errorText attribute to communicate cause of error.
 
 ## Fault reporting for data errors
@@ -222,10 +241,13 @@ If there are any comments or feedback arising from the review or use of this doc
 * The schedule, RTI and messages data that is published for consumption by the display will normally be correctly formatted for processing by the display.
 
 * Should the display have an issue with processing the incoming data i.e. invalid json or missing field then it should send a sensorEvent to the DATA sensor type.
+
 ```json
 {device_type}/sensorEvent/service/DATA
 ```
+
 * The response for this
+
 ```json
 "sensorEvent": {
 	"vendorId": "VENDOR0001", // unique within project
@@ -238,7 +260,9 @@ If there are any comments or feedback arising from the review or use of this doc
 	}
 }
 ```
+
 * dataType shall be one of:
+
 ```json
 [
 	scheduledDeparture,
@@ -247,6 +271,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	journeyMessage
 ]
 ```
+
 * Should there be data errors, then this will generate alerts for the user within the CMS. The errorText should be sufficiently descriptive where possible for the user to understand what the issue is.
 
 # Audio
@@ -258,22 +283,29 @@ If there are any comments or feedback arising from the review or use of this doc
 * The speech assets will by default comprise of English, and in the case of Welsh implementations Welsh & English with a Welsh accent audio file.
 
 * To accommodate this, a request a will made to the following topic:
+
 ```json
 {device_type}/getSpeechAssets/request/{vendor_id}/{deviceId}
 ```
+
 * With a simple payload being an array of locationRef:
+
 ```json
 ["5710AWA11097"]
 ```
-* The service will response on the topic:
+
+* The service will respond on the topic:
+
 ```json
 PID-TFT/getSpeechAssets/response/1234
 ```
+
 * The response will contain two types of object:
 
 ### Speech Assets
 
 * This will be a array of assets for the sign to download with the type and language specified, for example:
+
 ```json
 {
 	"url": "https://mediaassets.net/speech-assets/serviceAlias_6630_EN.mp3",
@@ -282,7 +314,9 @@ PID-TFT/getSpeechAssets/response/1234
 	"lang": "EN"
 }
 ```
+
 * The "type" can be one of the following enumerated status values:
+
 ```json
 [
 	locationRefAlias, // for the names of stops
@@ -290,9 +324,11 @@ PID-TFT/getSpeechAssets/response/1234
 	phraseAsset // for predefined strings of spoken text.
 ]
 ```
+
 ### Speech Message
 
 * This contains the data required by the sign to know which items to speak for each of the triggers, for each of the languages. Also, pre-configured commands can be used by the sign to read aloud the next *n* departures for instance.
+
 ```json
 "speechMessage": {
 	"modifiedAt": "2024-04-29T08:04:41.577Z",
@@ -324,9 +360,11 @@ PID-TFT/getSpeechAssets/response/1234
 	]
 }
 ```
+
 ### Trigger Configuration
 
 * The "trigger" for audio anouncements through physical or software buttons or tiggers can be configured using one of the following enumerated status values:
+
 ```json
 [
 	TRIGGER1,
@@ -334,4 +372,3 @@ PID-TFT/getSpeechAssets/response/1234
 	TRIGGER3
 ]
 ```
-

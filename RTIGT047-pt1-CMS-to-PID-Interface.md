@@ -4,11 +4,9 @@
 
 # Part 1 - Architecture
 
-
 ## Status of this document
 
 If there are any comments or feedback arising from the review or use of this document, please contact us at secretariat@rtig.org.uk
-
 
 # Communications Infrastructure
 
@@ -57,13 +55,13 @@ N.B. The RTPI prediction engine and its means of communication with the CMS are 
 * This interface protocol does not therefore require the use of any specific encryption mechanism; it recommends that this should be chosen and specified as a project requirement by the contracting body dependent on a number of factors such as:
 
 * The network types in use
-	* i.e. if the public internet is not being used, is sufficient protection already given by an APN or VPN?
+  * i.e. if the public internet is not being used, is sufficient protection already given by an APN or VPN?
 
 * The processing capability of PID on-board computers
-	* i.e. do they have sufficient processing power to support full TLS-compliant encryption?
+  * i.e. do they have sufficient processing power to support full TLS-compliant encryption?
 
 * Analysis of the perceived security risks
-	* e.g. would pre-shared key (PSK) encryption be sufficient for the proposed network, given that no GDPR-related data is being transmitted across the network?
+  * e.g. would pre-shared key (PSK) encryption be sufficient for the proposed network, given that no GDPR-related data is being transmitted across the network?
 
 * The minimum level of security shall be the use of basic Username and Password Authentication. It is recommended, but not mandated, that each PID uses a different username and password. The username and password must be provided securely to the display.
 
@@ -155,15 +153,15 @@ Figure 4 Multi vendor RTPI / CMS with their own MQTT Broker example
 
 * The following rules apply to publishing and subscribing to topic names:
 
-	* The "/" character is used to separate the constituent parts of the topic name into the hierarchical elements. There should not be a leading "/" at the beginning of the topic name.
+  * The "/" character is used to separate the constituent parts of the topic name into the hierarchical elements. There should not be a leading "/" at the beginning of the topic name.
 
-	* A leading "/" character should not be used at the start of the topic name.
+  * A leading "/" character should not be used at the start of the topic name.
 
-	* Spaces in topic names are permitted by MQTT but are not permitted under this interface protocol.
+  * Spaces in topic names are permitted by MQTT but are not permitted under this interface protocol.
 
-	* The "+" character is used as a wildcard that matches a single level in the hierarchy. It should only therefore appear between two "/" characters.
+  * The "+" character is used as a wildcard that matches a single level in the hierarchy. It should only therefore appear between two "/" characters.
 
-	* The "#" character is used a wildcard that matches multiple levels in the hierarchy. It can only be used as the final character and must be preceded by a "/" character.
+  * The "#" character is used a wildcard that matches multiple levels in the hierarchy. It can only be used as the final character and must be preceded by a "/" character.
 
 N.B. Wildcards can only be used by MQTT subscribers; publishers must always create messages to fully specified topics.
 
@@ -204,26 +202,33 @@ CMS/InformationMessage/content/townCentre
 ```
 
 * Any PID that had been configured with a subscription to this topic would then receive the message.
+  
 * To send a more targeted message, the CMS could include a cluster id, a stop id and even a device unique id:
+
 ```json
 CMS/informationMessage/content/townCentre/999G123
 CMS/informationMessage/content/townCentre/999G123/9990123A
 CMS/informationMessage/content/townCentre/999G123/9990123A/ABCD1234567890
 ```
+
 * To receive any of these messages, each PID would be configured to subscribe to multiple topics. In order to minimise the number of subscriptions required, it would be possible for a PID to subscribe to all message types (originating from a CMS) at once using the following wildcarded topic names:
+
 ```json
 CMS/+/+/townCentre
 CMS/+/+/townCentre/999G123
 CMS/+/+/townCentre/999G123/9990123A
 CMS/+/+/townCentre/999G123/9990123A/ABCD1234567890
 ```
+
 * If we were to assume that each level of the qualified address was fully contained within the previous level (e.g. any given cluster was completely contained within its parent locality) we could extend the use of wildcards:
+
 ```json
 CMS/+/+/townCentre
 CMS/+/+/+/999G123
 CMS/+/+/+/+/9990123A
 CMS/+/+/+/+/+/ABCD1234567890
 ```
+
 * In situations where {locality_id} and or {cluster_id} are not known, for example if the display is standalone or not allocated to a cluster then the word "˜null"™ should be used.
 
 ## Topic Extensibility
@@ -240,16 +245,17 @@ N.B. The concept of a unique vendor id is also required in some of the interface
 
 # Appendix 1 Glossary
 
-
+| Term | Explanation |
+| ---- | ----------- |
 | APN | Access Point Name. A public APN is typically shared by all consumers of a mobile network. Conversely, a private APN is provided by a mobile network operator specifically for a single customer; only SIM cards provided by the operator to that customer can access the private APN. |
 | ATCO | Association of Transport Coordinating Officers |
-| BODS | Department for Transport's Bus Open Data Service |
+| BODS | Department for Transport’s Bus Open Data Service |
 | CMS | Content Management System. |
 | CRS | Computer Reservation System, a 3 letter code allocated to most major junctions and railway stations in England Scotland and Wales |
-| CSS | Cascading Style Sheets . CSS is a computer language for laying out and structuring web pages (HTML or XML) |
+| CSS | Cascading Style Sheets”. CSS is a computer language for laying out and structuring web pages (HTML or XML) |
 | GTFS | General Transit Feed Specification, a standardized data format that provides a structure for public transit agencies to describe the details of their services such as schedules, stops, fares, etc. |
 | HTML | HyperText Markup Language |
-| IANA | The [Internet Assigned Numbers Authority](https://www.iana.org/) and is an organization responsible for coordinating key elements of the internet's unique identifiers, like IP addresses and domain names. |
+| IANA | The [Internet Assigned Numbers Authority](https://www.iana.org/) and is an organization responsible for coordinating key elements of the internet's unique identifiers, like IP addresses and domain names. |
 | JSON | JavaScript Object Notation is a standard data interchange format that's lightweight, human-readable, and compatible with many programming languages. |
 | MIME | MIME (Multipurpose Internet Mail Extensions) is an internet standard that extends basic internet protocols to support sending and receiving email messages containing various media types, including text, images, audio, and video, beyond basic ASCII text |
 | MQTT | the Message Queuing Telemetry Transport protocol is an open OASIS and ISO standard (ISO/IEC 20922) that enables the exchange of arbitrary data between two machines without a direct communication link between them. The protocol defines no encoding scheme for the payload data. MQTT is very popular in the Internet of Things (IoT) space. MQTT can work over TCP, UDP and WebSockets. |
@@ -262,12 +268,7 @@ N.B. The concept of a unique vendor id is also required in some of the interface
 | SIRI | Standard Interface for Real-time Information is a CEN/ Technical Standard for exchanging real-time information about public transport services and vehicles |
 | TfW | Transport for Wales |
 | TIPLOC | Timing Point Location, essentially a shortened version of the rail location's full name. |
-| TLS | Transport Layer Security is the successor of the deprecated Secure Sockets Layer (SSL). It is a [cryptographic protocol](https://en.wikipedia.org/wiki/Cryptographic_protocols) designed to provide communications security over a computer network. It is most commonly known for providing the "secure" component (i.e. the "S" ) in HTTPS. |
+| TLS | Transport Layer Security is the successor of the deprecated Secure Sockets Layer (SSL). It is a [cryptographic protocol](https://en.wikipedia.org/wiki/Cryptographic_protocols) designed to provide communications security over a computer network. It is most commonly known for providing the “secure” component (i.e. the “S”) in HTTPS. |
 | TLS | Transport Layer Security |
-| UUID | A UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information in computer systems |
-| VPN | Virtual private networks extend [private network](https://en.wikipedia.org/wiki/Private_network)s across public networks (such as the internet). |
-
-
-
-
-
+| UUID | A UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information in computer systems |
+| VPN | Virtual private networks extend [private network](https://en.wikipedia.org/wiki/Private_network)s across public networks (such as the internet). |

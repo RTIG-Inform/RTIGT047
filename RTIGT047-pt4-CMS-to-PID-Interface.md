@@ -311,7 +311,7 @@ PID-TFT/getSpeechAssets/response/1234
 	"url": "https://mediaassets.net/speech-assets/serviceAlias_6630_EN.mp3",
 	"modified": "2024-02-19T15:16:39",
 	"type": "locationRefAlias",
-	"lang": "EN"
+	"lang": "en"
 }
 ```
 
@@ -335,25 +335,25 @@ PID-TFT/getSpeechAssets/response/1234
 	"variations": [
 		{
 			"speechMessageFileName": "97d8c52e-6ff2-4f9f-8e59-7d5d1dcdb34a",
-			"lang": "CY",
+			"lang": "cy",
 			"type": "locationRefAlias",
 			"text": "dyma Ffordd y Brenin" // phonetic version of text for TTS services
 		},
 		{
 			"speechMessageFileName": "7b000590-0b01-472e-a640-73c13e9c8199",
-			"lang": "EN",
+			"lang": "en",
 			"type": "locationRefAlias",
 			"text": "This is Kingsway"
 		},
 		{
 			"speechMessageFileName": "890e9263-d4ef-4095-a688-a6d2c7b91cb8",
-			"lang": "CY",
+			"lang": "cy",
 			"type": "phraseAsset",
 			"text": "The services that depart from this stop are [service_to_destination_list]"
 		},
 		{
 			"speechMessageFileName": "5f58d840-7b54-4062-bdf7-19d58adbe933",
-			"lang": "EN",
+			"lang": "en",
 			"type": "phraseAsset",
 			"text": "The services that depart from this stop are [service_to_destination_list]"
 		},

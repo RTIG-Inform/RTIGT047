@@ -21,18 +21,18 @@ If there are any comments or feedback arising from the review or use of this doc
 ```json
 "multiLanguageText": [
 {
-		"lang": "EN",
+		"lang": "en",
 		"text": "Some text in English"
 	},
 	{
-		"lang": "CY",
+		"lang": "cy",
 		"text": " Rhywfaint o destun yn Saesneg"
 	},
 	...
 ]
 ```
 
-* Each text attribute is an array of tuple objects containing an ISO 639-1 two-character language code ("lang") and a text string ("text").
+* Each text attribute is an array of tuple objects containing an ISO 639-1 two-character language code in lower case ("lang") and a text string ("text").
 
 ## External Reference
 
@@ -118,7 +118,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	},
 	"operatorName": [ // multi-language text
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "The ABC Bus Company"
 		}
 	],
@@ -128,12 +128,12 @@ If there are any comments or feedback arising from the review or use of this doc
 	},
 	"publishedLineName": [ // multi-language text
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "123A"
 		}
 	"marketingLineName": [ // multi-language text
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "South Coast Express"
 		}
 	],
@@ -143,7 +143,7 @@ If there are any comments or feedback arising from the review or use of this doc
 	},
 	"originName": [ // multi-language text
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "Highbury"
 		}
 	],
@@ -153,19 +153,19 @@ If there are any comments or feedback arising from the review or use of this doc
 	},
 	"destinationName": [ // multi-language text
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "Paradise Park"
 		}
 	],
 	"via": [ // multi-language text
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "City Centre, Park and Ride North"
 		}
 	],
 	"poi": [ // multi-language text
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "Castle Ruins, All Saints Church"
 		}
 	]
@@ -183,11 +183,11 @@ If there are any comments or feedback arising from the review or use of this doc
 	"stops": [],
 	"locationName": [ // multiLanguageText object
 		{
-			"lang": "EN",
+			"lang": "en",
 			"text": "Cardiff Central"
 		},
 		{
-			"lang": "CY",
+			"lang": "cy",
 			"text": "Caerdydd Canolog"
 		}
 	],
@@ -571,7 +571,7 @@ CMS/scheduledDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/
 				},
 				"operatorName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "The ABC Bus Company"
 					}
 				],
@@ -581,13 +581,13 @@ CMS/scheduledDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/
 				},
 				"publishedLineName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "123A"
 					}
 				],
 				"marketingLineName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "South Coast Express"
 					}
 				],
@@ -597,7 +597,7 @@ CMS/scheduledDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/
 				},
 				"originName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Highbury"
 					}
 				],
@@ -607,19 +607,19 @@ CMS/scheduledDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/
 				},
 				"destinationName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Paradise Park"
 					}
 				],
 				"via": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "City Centre, Park and Ride North"
 					}
 				],
 				"poi": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Castle Ruins, All Saints Church"
 					}
 				]
@@ -665,11 +665,11 @@ N.B. At the highest level, "scheduledDepartures" is defined as an array, allowin
 				},
 				"operatorName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Transport for Wales"
 					}
 					{
-						"lang": "CY",
+						"lang": "cy",
 						"text": "Trafnidiaeth Cymru"
 					}
 				],
@@ -679,21 +679,21 @@ N.B. At the highest level, "scheduledDepartures" is defined as an array, allowin
 				},
 				"publishedLineName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "CDF - BYI"
 					}
 					{
-						"lang": "CY",
+						"lang": "cy",
 						"text": "CDF - BYI"
 					}
 				],
 				"marketingLineName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Barry Island"
 					}
 					{
-						"lang": "CY",
+						"lang": "cy",
 						"text": "Ynys y Barri"
 					}
 				],
@@ -703,11 +703,11 @@ N.B. At the highest level, "scheduledDepartures" is defined as an array, allowin
 				},
 				"originName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Cardiff"
 					}
 					{
-						"lang": "CY",
+						"lang": "cy",
 						"text": "Caerdydd"
 					}
 				],
@@ -717,31 +717,31 @@ N.B. At the highest level, "scheduledDepartures" is defined as an array, allowin
 				},
 				"destinationName": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Barry Island"
 					}
 					{
-						"lang": "CY",
+						"lang": "cy",
 						"text": " Ynys y Barri "
 					}
 				],
 				"via": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Grangetown (1559),Cogan (1603),Eastbrook (1605),Dinas Powys (1607),Cadoxton (1611),Barry Docks (1614),Barry (1618)"
 					}
 					{
-						"lang": "CY",
+						"lang": "cy",
 						"text": "Grangetown (1559),Cogan (1603),Eastbrook (1605),Dinas Powys (1607),Tregatwg (1611),Dociau'r Barri (1614),Y Barri (1618)"
 					}
 				],
 				"poi": [ // multi-language text
 					{
-						"lang": "EN",
+						"lang": "en",
 						"text": "Barry Docks"
 					}
 					{
-						"lang": "CY",
+						"lang": "cy",
 						"text": "Dociau'r Barri"
 					}
 				]
@@ -794,7 +794,7 @@ CMS/realTimeDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{
 			},
 			"operatorName": [ // multi-language text
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "The ABC Bus Company"
 				}
 			],
@@ -804,13 +804,13 @@ CMS/realTimeDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{
 			},
 			"publishedLineName": [ // multi-language text
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "123A"
 				}
 			],
 			"marketingLineName": [ // multi-language text
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "South Coast Express"
 				}
 			],
@@ -820,7 +820,7 @@ CMS/realTimeDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{
 			},
 			"originName": [ // multi-language text
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Highbury"
 				}
 			],
@@ -830,19 +830,19 @@ CMS/realTimeDeparture/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{
 			},
 			"destinationName": [ // multi-language text
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Paradise Park"
 				}
 			],
 			"via": [ // multi-language text
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "City Centre, Park and Ride North"
 				}
 			],
 			"poi": [ // multi-language text
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Castle Ruins, All Saints Church"
 				}
 			],
@@ -895,11 +895,11 @@ CMS/informationMessage/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/
 	"informationMessage": {
 		"messageText": [
 			{
-				"lang": "EN",
+				"lang": "en",
 				"text": "Service 123A suspended between 10am and 5pm today"
 			},
 			{
-				"lang": "CY",
+				"lang": "cy",
 				"text": " Gwasanaeth 123A wedi'i atal rhwng 10am a 5pm heddiw"
 			}
 		],
@@ -934,11 +934,11 @@ CMS/journeyMessage/content/{locality_id}/{cluster_id}/{stop_id}/{vendor_id}/{dev
 	"journeyMessage": {
 		"messageText": [
 			{
-				"lang": "EN",
+				"lang": "en",
 				"text": "Cancelled"
 			},
 			{
-				"lang": "CY",
+				"lang": "cy",
 				"text": "Canslo"
 			}
 		]
@@ -1086,11 +1086,11 @@ displayPublicKey: "string representing the PEM format public key"
 			"stops": ["4900128738"],
 			"locationName": [ // multiLanguageText object
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Cardiff Central"
 				},
 				{
-					"lang": "CY",
+					"lang": "cy",
 					"text": "Caerdydd Canolog"
 				}
 			]
@@ -1170,11 +1170,11 @@ CMS/journeyMessage/request
 			"stops": ["4900128738"],
 			"locationName": [ // multiLanguageText object
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Cardiff Central"
 				},
 				{
-					"lang": "CY",
+					"lang": "cy",
 					"text": "Caerdydd Canolog"
 				}
 			]
@@ -1198,11 +1198,11 @@ CMS/journeyMessage/request
 			"stops": ["4900128738"],
 			"locationName": [ // multiLanguageText object
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Cardiff Central"
 				},
 				{
-					"lang": "CY",
+					"lang": "cy",
 					"text": "Caerdydd Canolog"
 				}
 			]
@@ -1226,11 +1226,11 @@ CMS/journeyMessage/request
 			"stops": ["4900128738"],
 			"locationName": [ // multiLanguageText object
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Cardiff Central"
 				},
 				{
-					"lang": "CY",
+					"lang": "cy",
 					"text": "Caerdydd Canolog"
 				}
 			]
@@ -1254,11 +1254,11 @@ CMS/journeyMessage/request
 			"stops": ["4900128738"],
 			"locationName": [ // multiLanguageText object
 				{
-					"lang": "EN",
+					"lang": "en",
 					"text": "Cardiff Central"
 				},
 				{
-					"lang": "CY",
+					"lang": "cy",
 					"text": "Caerdydd Canolog"
 				}
 			]

@@ -615,14 +615,14 @@ ERROR
 						"url": "https://suppliername.com/content/images/sce-en.png",
 						"md5": "79054025255fb1a26e4bc422aef54eb4",
 						"contentExpiry": "2022-03-01T00:00:00-00:00",
-						"lang": "EN"
+						"lang": "en"
 					},
 					{
 						"contentType": "image/png",
 						"url": "https://suppliername.com/content/images/sce-cy.png",
 						"md5": "79054025255fb1a26e4bc422aef54eb4",
 						"contentExpiry": "2022-03-01T00:00:00-00:00",
-						"lang": "CY"
+						"lang": "cy"
 					}
 				]
 			},
@@ -635,7 +635,7 @@ ERROR
 						"url": "https://suppliername.com/content/images/sce-en.png",
 						"md5": "79054025255fb1a26e4bc422aef54eb4",
 						"contentExpiry": "2022-03-01T00:00:00-00:00",
-						"lang": "EN"
+						"lang": "en"
 					}
 				]
 			},
@@ -648,7 +648,7 @@ ERROR
 						"url": "https://suppliername.com/content/images/railway-en.png",
 						"md5": "79054025255fb1a26e4bc422aef54eb4",
 						"contentExpiry": "2022-03-01T00:00:00-00:00",
-						"lang": "EN"
+						"lang": "en"
 					}
 				]
 			}

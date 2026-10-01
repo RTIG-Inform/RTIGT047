@@ -1,9 +1,9 @@
-![](images/rtig_document_header_logo.png)
+
+![RTIG Logo](images/rtig_document_header_logo.png)
 
 # RTIG T047 CMS to PID Interface Protocol
 
 # Background and Introduction to the Standard
-
 
 ## Status of this document
 
@@ -26,6 +26,7 @@ Transport for Wales (TfW) would like to specify a standard interface between the
 The standard will specify the minimum capability that is to be expected of all displays supported through the interface (i.e. be able to represent real time vehicle arrival/departure information, text-based messages and hold the scheduled timetable for at least that day's services).
 
 The interface will cater for the following:
+
 * Basic text-based displays
 * Graphical displays - in addition to the minimum capability, also be able to provide additional information such as weather, news feeds, advertising, information videos etc.
 * Off grid displays - these will not have ready access to power and may not have significant data bandwidth available to show graphical content.
@@ -39,12 +40,13 @@ This document is the introduction to the series of documents detailing a standar
 ## Governing Principles
 
 This document has been drafted with the following principles in mind:
+
 * Abstraction - "no need to re-invent the wheel".
-    * Lower-level concepts should be abstracted away using existing standards wherever possible; this document focuses solely on the application-level detail.
+  * Lower-level concepts should be abstracted away using existing standards wherever possible; this document focuses solely on the application-level detail.
 * Clarity - "grey areas should be minimised".
-    * Committee-designed standards often evolve to support multiple different mechanisms of achieving the same result, leading to grey areas in compatibility between products that can all legitimately claim to support the standard - although in many cases, interoperability is limited.
+  * Committee-designed standards often evolve to support multiple different mechanisms of achieving the same result, leading to grey areas in compatibility between products that can all legitimately claim to support the standard - although in many cases, interoperability is limited.
 * Simplicity - "less is more".
-    * The more complex the interface protocol becomes, the less likelihood there is of industry-wide uptake. Conversely, by keeping the rules to a bare minimum, we hope to encourage wider adoption and compatibility by PID and CMS suppliers.
+  * The more complex the interface protocol becomes, the less likelihood there is of industry-wide uptake. Conversely, by keeping the rules to a bare minimum, we hope to encourage wider adoption and compatibility by PID and CMS suppliers.
   
   In summary, it is the intention that this specification should be as lightweight and as high-level as possible. As the project progresses, this document will be updated to reflect the latest status of the interface design.
 
@@ -108,8 +110,3 @@ Procuring authorities are encouraged to consider new requirements and approaches
 
 RTIG is grateful to Transport for Wales for funding the project that initially developed this standard.
 We are grateful to the members of the technical working group who have contributed to its development including Vix Technology, Journeo, r2p Systems UK, Elydium, Transport for London and ITxPT.
-
-
-
-
-
